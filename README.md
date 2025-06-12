@@ -11,7 +11,7 @@ A modern, interactive platform to study chess openings like the London System an
 - 🎓 Step-by-step tutorials for each opening
 - 🧠 Strategy breakdowns and practical advice
 - ♟️ Interactive chessboard using `react-chessboard`
-- 🌙 Dark mode + responsive design
+- 🌙 Dark mode + animated, themed UI with effects
 
 ---
 
@@ -20,7 +20,7 @@ A modern, interactive platform to study chess openings like the London System an
 - **Frontend**: React, TailwindCSS
 - **Chessboard Library**: [`react-chessboard`](https://www.npmjs.com/package/react-chessboard)
 - **Icons**: Heroicons
-- **Hosting**: GitHub Pages / Vercel (to be finalized)
+- **Hosting**: GitHub Pages / Vercel (TBD)
 
 ---
 
@@ -49,12 +49,14 @@ This project is created to:
 
 ### 🖼️ Screenshots
 
-> Add your screenshots to a `screenshots/` folder or upload them via GitHub Issues.  
-> Then replace the placeholder paths below.
+> Uploaded via Imgur:
 
-```md
-![Home Page](https://imgur.com/a/3EYA1lj)
-![London Opening](https://imgur.com/a/vHkZFOY)
+![Home Page](https://i.imgur.com/3EYA1lj.png)  
+![London Opening](https://i.imgur.com/vHkZFOY.png)
+
+### 🎥 Demo Video
+
+> Hosted on YouTube:
 
 [![Watch the demo](https://img.youtube.com/vi/JEvlpLUAfZM/0.jpg)](https://www.youtube.com/watch?v=JEvlpLUAfZM)
 
@@ -67,4 +69,3 @@ git clone https://github.com/Harmanjeet28/ChessMate.git
 cd chessmate
 npm install
 npm run dev
-
