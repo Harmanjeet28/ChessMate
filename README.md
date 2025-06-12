@@ -51,8 +51,8 @@ This project is created to:
 
 > Uploaded via Imgur:
 
-![Home Page](https://i.imgur.com/3EYA1lj.png)  
-![London Opening](https://i.imgur.com/vHkZFOY.png)
+![Home Page](https://i.imgur.com/opI5uf9.png)  
+![London Opening](https://i.imgur.com/IoqLp3k.png)
 
 ### 🎥 Demo Video
 
