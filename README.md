@@ -7,52 +7,64 @@ A modern, interactive platform to study chess openings like the London System an
 
 ## 🚀 Features
 
-- 🌐 Clean, responsive UI built with React + TailwindCSS
+- 🌐 Clean, responsive UI built with **React** + **TailwindCSS**
 - 🎓 Step-by-step tutorials for each opening
-- 🧠 Strategy explanations and practical tips
-- ♟️ Interactive chessboard for move visualization
+- 🧠 Strategy breakdowns and practical advice
+- ♟️ Interactive chessboard using `react-chessboard`
+- 🌙 Dark mode + responsive design
 
 ---
 
 ## 🛠️ Tech Stack
 
 - **Frontend**: React, TailwindCSS
-- **Chessboard**: react-chessboard
+- **Chessboard Library**: [`react-chessboard`](https://www.npmjs.com/package/react-chessboard)
 - **Icons**: Heroicons
-- **Hosting**: GitHub Pages or Vercel (TBD)
+- **Hosting**: GitHub Pages / Vercel (to be finalized)
 
 ---
 
 ## 📂 Pages
 
-| Page          | Description                            |
-|---------------|----------------------------------------|
-| Home          | Intro and quick overview               |
-| Openings      | List of available tutorials            |
-| London System | White opening with control strategy    |
-| Caro-Kann     | Solid defense against e4 for Black     |
+| Page               | Description                                       |
+|--------------------|---------------------------------------------------|
+| **Home**           | Introduction and overview of the platform         |
+| **Openings**       | List of available chess tutorials                 |
+| **London System**  | White opening focused on control and structure    |
+| **Caro-Kann Defense** | A solid and respected reply to 1.e4             |
 
 ---
 
-## 🎯 Goal
+## 🎯 Project Goals
 
-This project is designed to:
-- Demonstrate frontend skills (React + Tailwind)
-- Build educational UI/UX
-- Serve as a GitHub portfolio project for job applications
+This project is created to:
+
+- Showcase frontend development skills (React + Tailwind)
+- Demonstrate dynamic UI/UX for educational content
+- Serve as a portfolio-ready GitHub project for job applications
 
 ---
 
-## 📸 Screenshots
+## 📸 Preview
 
-(Coming soon...)
+### 🖼️ Screenshots
+
+> Add your screenshots to a `screenshots/` folder or upload them via GitHub Issues.  
+> Then replace the placeholder paths below.
+
+```md
+![Home Page](https://imgur.com/a/3EYA1lj)
+![London Opening](https://imgur.com/a/vHkZFOY)
+
+[![Watch the demo](https://img.youtube.com/vi/JEvlpLUAfZM/0.jpg)](https://www.youtube.com/watch?v=JEvlpLUAfZM)
 
 ---
 
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/your-username/chessmate.git
-cd chesswise
+git clone https://github.com/Harmanjeet28/ChessMate.git
+cd chessmate
 npm install
 npm run dev
+
