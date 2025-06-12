@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Container, Typography, TextField, Button, Box, Alert } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from './firebase'; // Adjust path if needed
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth } from './firebase';
 
 export default function SignUp() {
   const navigate = useNavigate();
-  const [form, setForm] = useState({ email: '', password: '' });
+  const [form, setForm] = useState({ email: '', password: '', username: '' });
   const [error, setError] = useState('');
 
   const handleChange = (e) => {
@@ -18,7 +18,10 @@ export default function SignUp() {
     setError('');
 
     try {
-      await createUserWithEmailAndPassword(auth, form.email, form.password);
+      const userCredential = await createUserWithEmailAndPassword(auth, form.email, form.password);
+      await updateProfile(userCredential.user, {
+        displayName: form.username
+      });
       alert('Sign up successful! Please sign in.');
       navigate('/signin');
     } catch (err) {
@@ -33,6 +36,15 @@ export default function SignUp() {
       </Typography>
       {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
       <Box component="form" onSubmit={handleSubmit} noValidate>
+        <TextField
+          label="Username"
+          name="username"
+          fullWidth
+          margin="normal"
+          value={form.username}
+          onChange={handleChange}
+          required
+        />
         <TextField
           label="Email"
           name="email"
