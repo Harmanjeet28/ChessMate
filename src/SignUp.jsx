@@ -13,6 +13,23 @@ export default function SignUp() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const inputStyle = {
+    input: { color: '#fff', backgroundColor: '#1e1e2f' },
+    label: { color: '#ccc' },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: '#4dd0e1',
+      },
+      '&:hover fieldset': {
+        borderColor: '#00bcd4',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: '#00ffff',
+        boxShadow: '0 0 5px #00ffff',
+      },
+    },
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
@@ -44,6 +61,7 @@ export default function SignUp() {
           value={form.username}
           onChange={handleChange}
           required
+          sx={inputStyle}
         />
         <TextField
           label="Email"
@@ -54,6 +72,7 @@ export default function SignUp() {
           value={form.email}
           onChange={handleChange}
           required
+          sx={inputStyle}
         />
         <TextField
           label="Password"
@@ -64,6 +83,7 @@ export default function SignUp() {
           value={form.password}
           onChange={handleChange}
           required
+          sx={inputStyle}
         />
         <Button
           type="submit"

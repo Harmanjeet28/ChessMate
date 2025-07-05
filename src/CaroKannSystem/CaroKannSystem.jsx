@@ -6,23 +6,21 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  useMediaQuery,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Chessboard } from 'react-chessboard';
 
-
 import mainLine from './variations/MainLine';
 import SpaceDisadvantage from './variations/SpaceDisadvantage';
-import easyPlay from './variations/easyPlay'
-import AdvanceLine from './variations/AdvanceLine'
-import standardPlay from './variations/standardPlay'
-import pawnThreat from './variations/pawnThreat'
-import fianchettoInCarroKhann from './variations/fianchettoInCarroKhann'
-import knightVariation from './variations/knightVariation'
-import fantasyVariation from './variations/fantasyVariation'
-import checkmateIdea from './variations/checkmateIdea'
-
-
+import easyPlay from './variations/easyPlay';
+import AdvanceLine from './variations/AdvanceLine';
+import standardPlay from './variations/standardPlay';
+import pawnThreat from './variations/pawnThreat';
+import fianchettoInCarroKhann from './variations/fianchettoInCarroKhann';
+import knightVariation from './variations/knightVariation';
+import fantasyVariation from './variations/fantasyVariation';
+import checkmateIdea from './variations/checkmateIdea';
 
 export default function CaroKannSystem() {
   const [position, setPosition] = useState('start');
@@ -31,11 +29,13 @@ export default function CaroKannSystem() {
   const [description, setDescription] = useState('');
   const [currentVariation, setCurrentVariation] = useState(null);
 
+  const isMobile = useMediaQuery('(max-width: 768px)');
+
   const variations = {
     'First when the pawn is pushin from white': {
       ...mainLine,
       ...SpaceDisadvantage,
-      ...easyPlay
+      ...easyPlay,
     },
     'Pawn Moves forward instead of capture': {
       ...AdvanceLine,
@@ -52,7 +52,6 @@ export default function CaroKannSystem() {
     'Standard Gameplay': {
       ...checkmateIdea,
     },
-    // Add more accordion categories here
   };
 
   const handleVariationSelect = (title, option) => {
@@ -81,7 +80,7 @@ export default function CaroKannSystem() {
   return (
     <Box
       sx={{
-        p: 4,
+        p: isMobile ? 2 : 4,
         maxWidth: 1400,
         margin: 'auto',
         backgroundColor: '#1c1624',
@@ -89,16 +88,23 @@ export default function CaroKannSystem() {
         color: 'white',
       }}
     >
-      <Typography variant="h4" fontWeight="bold" gutterBottom>
+      <Typography variant="h4" fontWeight="bold" gutterBottom textAlign="center">
         Caro-Kann Defense Explorer
       </Typography>
-      <Typography sx={{ mb: 4 }}>
+
+      <Typography sx={{ mb: 4, textAlign: 'center' }}>
         Select a variation line on the left to see Caro-Kann play styles in action.
       </Typography>
 
-      <Box sx={{ display: 'flex', gap: 4 }}>
-        {/* Left-hand variation menu */}
-        <Box sx={{ minWidth: 280 }}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: isMobile ? 'column' : 'row',
+          gap: 4,
+        }}
+      >
+        {/* Accordion Menu */}
+        <Box sx={{ minWidth: isMobile ? '100%' : 280 }}>
           {Object.entries(variations).map(([title, options]) => (
             <Accordion
               key={title}
@@ -160,15 +166,24 @@ export default function CaroKannSystem() {
           ))}
         </Box>
 
-        {/* Chessboard and explanation side-by-side */}
-        <Box sx={{ display: 'flex', gap: 4 }}>
+        {/* Board + Explanation */}
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: isMobile ? 'column' : 'row',
+            gap: 4,
+            width: '100%',
+            justifyContent: 'center',
+            alignItems: isMobile ? 'center' : 'flex-start',
+          }}
+        >
           {/* Chessboard */}
           <Box>
             <Chessboard
               position={position}
               boardArrows={arrows}
               arePiecesDraggable={false}
-              boardWidth={600}
+              boardWidth={isMobile ? 320 : 600}
             />
             <Button
               variant="contained"
@@ -183,14 +198,18 @@ export default function CaroKannSystem() {
             </Button>
           </Box>
 
-          {/* Static explanation box with reserved space */}
+          {/* Explanation Box */}
           <Box
             sx={{
-              width: 350,
+              width: isMobile ? '90%' : 350,
               minHeight: 200,
-              textAlign: 'left',
               mt: 2,
+              textAlign: 'left',
               visibility: description ? 'visible' : 'hidden',
+              backgroundColor: '#2a2040',
+              p: 2,
+              borderRadius: 2,
+              boxShadow: '0 0 10px rgba(255,255,255,0.1)',
             }}
           >
             <Typography variant="h6" fontWeight="bold" gutterBottom>
