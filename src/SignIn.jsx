@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { Container, Typography, TextField, Button, Box, Alert } from '@mui/material';
+import {
+  Container,
+  Typography,
+  TextField,
+  Button,
+  Box,
+  Alert
+} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from './firebase'; // Adjust path if needed
@@ -17,7 +24,6 @@ export default function SignIn() {
     e.preventDefault();
     setError('');
 
-    // Debug: Log form values to see what is being sent
     console.log('Submitting Sign In form:', form);
 
     try {
@@ -34,7 +40,13 @@ export default function SignIn() {
       <Typography variant="h4" component="h1" gutterBottom align="center">
         Sign In
       </Typography>
-      {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
+
+      {error && (
+        <Alert severity="error" sx={{ mb: 2 }}>
+          {error}
+        </Alert>
+      )}
+
       <Box component="form" onSubmit={handleSubmit} noValidate>
         <TextField
           label="Email"
@@ -45,7 +57,24 @@ export default function SignIn() {
           value={form.email}
           onChange={handleChange}
           required
+          sx={{
+            input: { color: '#fff', backgroundColor: '#1e1e2f' },
+            label: { color: '#ccc' },
+            '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+                borderColor: '#4dd0e1',
+              },
+              '&:hover fieldset': {
+                borderColor: '#00bcd4',
+              },
+              '&.Mui-focused fieldset': {
+                borderColor: '#00ffff',
+                boxShadow: '0 0 5px #00ffff',
+              },
+            },
+          }}
         />
+
         <TextField
           label="Password"
           name="password"
@@ -55,7 +84,24 @@ export default function SignIn() {
           value={form.password}
           onChange={handleChange}
           required
+          sx={{
+            input: { color: '#fff', backgroundColor: '#1e1e2f' },
+            label: { color: '#ccc' },
+            '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+                borderColor: '#4dd0e1',
+              },
+              '&:hover fieldset': {
+                borderColor: '#00bcd4',
+              },
+              '&.Mui-focused fieldset': {
+                borderColor: '#00ffff',
+                boxShadow: '0 0 5px #00ffff',
+              },
+            },
+          }}
         />
+
         <Button
           type="submit"
           variant="contained"
@@ -66,6 +112,7 @@ export default function SignIn() {
           Sign In
         </Button>
       </Box>
+
       <Typography align="center" sx={{ mt: 2 }}>
         Don't have an account?{' '}
         <Button variant="text" onClick={() => navigate('/signup')}>
