@@ -14,7 +14,7 @@ import { Chessboard } from 'react-chessboard';
 import mainLine from './variations/MainLine';
 import SpaceDisadvantage from './variations/SpaceDisadvantage';
 import easyPlay from './variations/easyPlay'
-import advanceLine from './variations/advanceLine'
+import AdvanceLine from './variations/AdvanceLine'
 import standardPlay from './variations/standardPlay'
 import pawnThreat from './variations/pawnThreat'
 import fianchettoInCarroKhann from './variations/fianchettoInCarroKhann'
@@ -38,7 +38,7 @@ export default function CaroKannSystem() {
       ...easyPlay
     },
     'Pawn Moves forward instead of capture': {
-      ...advanceLine,
+      ...AdvanceLine,
     },
     'Exchnage Variation': {
       ...standardPlay,
