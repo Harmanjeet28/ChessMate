@@ -10,7 +10,7 @@ import {
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Chessboard } from 'react-chessboard';
 
-// 🎯 Import variations from modules
+
 import mainLine from './variations/MainLine';
 import spaceDisadvantage from './variations/spaceDisadvantage';
 import easyPlay from './variations/easyPlay'
@@ -21,7 +21,6 @@ import fianchettoInCarroKhann from './variations/fianchettoInCarroKhann'
 import knightVariation from './variations/knightVariation'
 import fantasyVariation from './variations/fantasyVariation'
 import checkmateIdea from './variations/checkmateIdea'
-import bishopSaver from './variations/bishopSaver'
 
 
 
@@ -52,7 +51,6 @@ export default function CaroKannSystem() {
     },
     'Standard Gameplay': {
       ...checkmateIdea,
-      ...bishopSaver,
     },
     // Add more accordion categories here
   };
