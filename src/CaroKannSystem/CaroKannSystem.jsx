@@ -12,7 +12,7 @@ import { Chessboard } from 'react-chessboard';
 
 
 import mainLine from './variations/MainLine';
-import spaceDisadvantage from './variations/spaceDisadvantage';
+import SpaceDisadvantage from './variations/SpaceDisadvantage';
 import easyPlay from './variations/easyPlay'
 import advanceLine from './variations/advanceLine'
 import standardPlay from './variations/standardPlay'
@@ -34,7 +34,7 @@ export default function CaroKannSystem() {
   const variations = {
     'First when the pawn is pushin from white': {
       ...mainLine,
-      ...spaceDisadvantage,
+      ...SpaceDisadvantage,
       ...easyPlay
     },
     'Pawn Moves forward instead of capture': {
