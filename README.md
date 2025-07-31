@@ -5,6 +5,13 @@ A modern, interactive platform to study chess openings like the London System an
 
 ---
 
+## 🌍 Deployment
+
+You can view the live deployed version of **ChessMate** here:  
+🔗 [https://chessmatefinal.vercel.app/](https://chessmatefinal.vercel.app/)
+
+---
+
 ## 🚀 Features
 
 - 🌐 Clean, responsive UI built with **React** + **TailwindCSS**
